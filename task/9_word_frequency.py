@@ -1,16 +1,11 @@
-def word_frequency(s: str) -> dict:
-    signs = ",.!?;:"
-    s_dict = {}
-    
-    for char in signs:
-        s = s.replace(char, "")
-    s = s.lower().split(" ")
+import re
 
+def word_frequency(s: str) -> dict:
+    s = re.sub(r'[^a-zA-Z\s]', '', s).lower().split()
+    
+    s_dict = {}
     for i in s:
-        if s_dict.get(i) is None:
-            s_dict[i] = 1
-        else:
-            s_dict[i] += 1
+        s_dict[i] = s_dict.get(i, 0) + 1
     return s_dict
 
 if __name__ == "__main__":
