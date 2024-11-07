@@ -1,10 +1,6 @@
 def is_palindrome(s: str) -> bool:
     s = s.lower().replace(" ", "")
-    
-    for i, j in enumerate(s[:(len(s)//2+1)], start=1):
-        if j != s[-i]:
-            return False
-    return True
+    return s == s[::-1]
     
 
 if __name__ == "__main__":
