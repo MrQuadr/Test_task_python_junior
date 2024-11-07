@@ -5,7 +5,7 @@ class ComplexNumber:
         self.real = real
         self.imag = imag
 
-    def denominator(self):
+    def conjugate(self):
         return ComplexNumber(self.real, -self.imag)
 
     def modulus_squared(self):
@@ -24,8 +24,8 @@ class ComplexNumber:
         )
 
     def __truediv__(self, other):
-        denominator = other.denominator()
-        numerator = self * denominator
+        conjugate = other.conjugate()
+        numerator = self * conjugate
         denominator = other.modulus_squared()
         return ComplexNumber(numerator.real / denominator, numerator.imag / denominator)
 
