@@ -11,4 +11,3 @@ def word_frequency(s: str) -> dict:
 if __name__ == "__main__":
     text = "Hello, hello world! World. It's a beautiful world, isn't it?"
     print(word_frequency(text))
-    pass
